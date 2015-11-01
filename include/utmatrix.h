@@ -296,6 +296,8 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
+	if (Size != mt.Size)
+		throw std::exception("no equal size");
 	TMatrix<ValType> tmp(Size);
 	for (int i = 0; i < Size; i++)
 		tmp.pVector[i] = pVector[i] + mt.pVector[i];
@@ -305,6 +307,8 @@ TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 template <class ValType> // вычитание
 TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
+	if (Size != mt.Size)
+		throw std::exception("no equal size");
 	TMatrix<ValType> tmp(Size);
 	for (int i = 0; i < Size; i++)
 		tmp.pVector[i] = pVector[i] - mt.pVector[i];
