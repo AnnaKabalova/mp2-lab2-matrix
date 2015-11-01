@@ -73,8 +73,8 @@ TEST(TVector, can_set_and_get_element)
 
 TEST(TVector, throws_when_set_element_with_negative_index)
 {
-	/*TVector<int> v(7);
-	ASSERT_ANY_THROW(v[-1] = 7);*/
+	TVector<int> v(7);
+	ASSERT_ANY_THROW(v[-1] = 7);
 
 }
 

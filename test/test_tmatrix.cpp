@@ -62,14 +62,14 @@ TEST(TMatrix, can_set_and_get_element)
 
 TEST(TMatrix, throws_when_set_element_with_negative_index)
 {
-	/*TMatrix<int> m(5);
-	ASSERT_ANY_THROW(m[1][-2] = 3);*/
+	TMatrix<int> m(5);
+	ASSERT_ANY_THROW(m[1][-2] = 3);
 }
 
 TEST(TMatrix, throws_when_set_element_with_too_large_index)
 {
-	/*TMatrix<int> m(7);
-	ASSERT_ANY_THROW(m[1][10] = 3);*/
+	TMatrix<int> m(7);
+	ASSERT_ANY_THROW(m[1][10] = 3);
 }
 
 TEST(TMatrix, can_assign_matrix_to_itself)
