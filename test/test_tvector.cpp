@@ -274,7 +274,7 @@ TEST(TVector, cant_multiply_vectors_with_not_equal_size)
 		a[i] = i;
 	for (int i = 0; i < size + size; i++)
 		b[i] = i + 1;
-	ASSERT_ANY_THROW(b + a);
+	ASSERT_ANY_THROW(b * a);
 
 }
 
