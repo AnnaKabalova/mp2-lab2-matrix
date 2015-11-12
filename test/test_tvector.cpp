@@ -171,8 +171,11 @@ TEST(TVector, can_add_scalar_to_vector)
 {
 	int size = 7;
 	TVector<int> a(size);
+	TVector<int> b(size);
+	for (int i = 0; i < size; i++)
+		b[i] = 5;
 	a = a + 5;
-	ASSERT_NO_THROW(a);
+	EXPECT_EQ(true, b == a);
 
 }
 
@@ -180,20 +183,26 @@ TEST(TVector, can_subtract_scalar_from_vector)
 {
 	int size = 7;
 	TVector<int> a(size);
+	TVector<int> b(size);
 	for (int i = 0; i < size; i++)
-		a[i] = i + 3;
+		a[i] = 3; 
+	for (int i = 0; i < size; i++)
+		b[i] = 2;
 	a = a - 1;
-	ASSERT_NO_THROW(a);
+	EXPECT_EQ(true, b == a);
 }
 
 TEST(TVector, can_multiply_scalar_by_vector)
 {
 	int size = 7;
 	TVector<int> a(size);
+	TVector<int> b(size);
 	for (int i = 0; i < size; i++)
-		a[i] = i + 3;
+		a[i] = 3;
+	for (int i = 0; i < size; i++)
+		b[i] = 6;
 	a = a * 2;
-	ASSERT_NO_THROW(a);
+	EXPECT_EQ(true, b == a);
 }
 
 TEST(TVector, can_add_vectors_with_equal_size)
@@ -261,7 +270,7 @@ TEST(TVector, can_multiply_vectors_with_equal_size)
 	for (int i = 0; i < size; i++)
 		b[i] = i + 1;
 	s = a*b;
-	EXPECT_EQ(s, a*b);
+	EXPECT_EQ(s, a * b);
 
 }
 
