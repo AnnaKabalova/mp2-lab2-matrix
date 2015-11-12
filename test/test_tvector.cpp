@@ -91,8 +91,7 @@ TEST(TVector, can_assign_vector_to_itself)
 	TVector<int> vec(size);
 	for (int i = 0; i < size; i++)
 		vec[i] = i;
-	vec = vec;
-	EXPECT_EQ(vec, vec);
+	ASSERT_NO_THROW(vec = vec);
 }
 
 TEST(TVector, can_assign_vectors_of_equal_size)
