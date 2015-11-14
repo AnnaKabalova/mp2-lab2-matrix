@@ -211,8 +211,9 @@ TEST(TVector, can_add_vectors_with_equal_size)
 	TVector<int> b(size);
 	for (int i = 0; i < size; i++)
 		a[i] = i;
-	b = a + a;
-	EXPECT_EQ(a + a, b);
+	for (int i = 0; i < size; i++)
+		b[i] = 2*i;
+	EXPECT_EQ(b, a + a);
 
 }
 
@@ -262,13 +263,13 @@ TEST(TVector, can_multiply_vectors_with_equal_size)
 	int size = 7;
 	int s = 0;
 	TVector<int> a(size);
-	TVector<int> c(size);
 	TVector<int> b(size);
 	for (int i = 0; i < size; i++)
 		a[i] = i;
 	for (int i = 0; i < size; i++)
 		b[i] = i + 1;
-	s = a*b;
+	for (int i = 0; i < size; i++)
+		s += i*(i + 1);
 	EXPECT_EQ(s, a * b);
 
 }

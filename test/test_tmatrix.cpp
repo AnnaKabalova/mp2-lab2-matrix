@@ -137,9 +137,11 @@ TEST(TMatrix, can_add_matrices_with_equal_size)
 	TMatrix<int> m(5), n(5), a(5);
 	m[1][1] = 5;
 	m[2][3] = 1;
+
 	n[1][1] = 5;
 	n[2][3] = 4;
 	n[3][1] = 1;
+
 	a[1][1] = 10;
 	a[2][3] = 5;
 	a[3][1] = 1;
@@ -150,6 +152,7 @@ TEST(TMatrix, cant_add_matrices_with_not_equal_size)
 {
 	TMatrix<int> m(5), n(10);
 	m[1][1] = 5;
+
 	n[2][3] = 4;
 	n[1][1] = 5;
 	n[2][3] = 4;
@@ -162,6 +165,7 @@ TEST(TMatrix, can_subtract_matrices_with_equal_size)
 	m[1][1] = 7;
 	m[2][3] = 8;
 	m[3][1] = 9;
+
 	n[1][1] = 4;
 	n[2][3] = 3;
 	n[3][1] = 1;
